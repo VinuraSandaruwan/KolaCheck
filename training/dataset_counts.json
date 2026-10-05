@@ -1,0 +1,14 @@
+{
+  "dataset": "SLTeaLeaf standardized originals",
+  "source": "data-source/Sri Lankan Tea Leaf Dataset/Sri Lankan Tea Leaf Dataset/standardised_raw",
+  "image_count_total": 1791,
+  "classes": {
+    "algal_leaf_spot": 417,
+    "black_blight": 345,
+    "blister_blight": 126,
+    "gray_blight": 431,
+    "healthy": 334,
+    "spider_mite": 138
+  },
+  "note": "Counts are from local files; not model metrics."
+}
