@@ -1,0 +1,6 @@
+algal_leaf_spot
+black_blight
+blister_blight
+gray_blight
+healthy
+spider_mite
