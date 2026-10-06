@@ -1,0 +1,348 @@
+{
+  "evaluation_split": "test_original_only_baseid_split",
+  "split_method": "provided base_image_id grouped split",
+  "sample_counts": {
+    "train": 1065,
+    "validation": 188,
+    "test": 538
+  },
+  "report": {
+    "algal_leaf_spot": {
+      "precision": 0.8360655737704918,
+      "recall": 0.816,
+      "f1-score": 0.8259109311740891,
+      "support": 125
+    },
+    "black_blight": {
+      "precision": 0.7523809523809524,
+      "recall": 0.7596153846153846,
+      "f1-score": 0.7559808612440191,
+      "support": 104
+    },
+    "blister_blight": {
+      "precision": 0.8235294117647058,
+      "recall": 0.7368421052631579,
+      "f1-score": 0.7777777777777778,
+      "support": 38
+    },
+    "gray_blight": {
+      "precision": 0.8444444444444444,
+      "recall": 0.5846153846153846,
+      "f1-score": 0.6909090909090909,
+      "support": 130
+    },
+    "healthy": {
+      "precision": 0.7185185185185186,
+      "recall": 0.97,
+      "f1-score": 0.8255319148936171,
+      "support": 100
+    },
+    "spider_mite": {
+      "precision": 0.7307692307692307,
+      "recall": 0.926829268292683,
+      "f1-score": 0.8172043010752689,
+      "support": 41
+    },
+    "accuracy": 0.7806691449814126,
+    "macro avg": {
+      "precision": 0.7842846886080572,
+      "recall": 0.7989836904644351,
+      "f1-score": 0.7822191461789773,
+      "support": 538
+    },
+    "weighted avg": {
+      "precision": 0.7911544637679506,
+      "recall": 0.7806691449814126,
+      "f1-score": 0.7756378832217923,
+      "support": 538
+    }
+  },
+  "confusion_matrix": [
+    [
+      102,
+      6,
+      4,
+      3,
+      4,
+      6
+    ],
+    [
+      2,
+      79,
+      1,
+      11,
+      10,
+      1
+    ],
+    [
+      1,
+      2,
+      28,
+      0,
+      6,
+      1
+    ],
+    [
+      16,
+      17,
+      1,
+      76,
+      16,
+      4
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      97,
+      2
+    ],
+    [
+      1,
+      0,
+      0,
+      0,
+      2,
+      38
+    ]
+  ],
+  "classes": [
+    "algal_leaf_spot",
+    "black_blight",
+    "blister_blight",
+    "gray_blight",
+    "healthy",
+    "spider_mite"
+  ],
+  "tflite_evaluation": {
+    "evaluation_split": "test_original_only_baseid_split",
+    "sample_count": 538,
+    "model_version": "70960d556035e879",
+    "labels_match_app": true,
+    "input_shape": [
+      1,
+      224,
+      224,
+      3
+    ],
+    "output_shape": [
+      1,
+      6
+    ],
+    "preprocessing": "EXIF transpose, RGB, 224x224 bilinear resize; same code as backend inference",
+    "report": {
+      "algal_leaf_spot": {
+        "precision": 0.8347826086956521,
+        "recall": 0.768,
+        "f1-score": 0.8,
+        "support": 125
+      },
+      "black_blight": {
+        "precision": 0.7676767676767676,
+        "recall": 0.7307692307692307,
+        "f1-score": 0.7487684729064039,
+        "support": 104
+      },
+      "blister_blight": {
+        "precision": 0.8,
+        "recall": 0.631578947368421,
+        "f1-score": 0.7058823529411765,
+        "support": 38
+      },
+      "gray_blight": {
+        "precision": 0.8481012658227848,
+        "recall": 0.5153846153846153,
+        "f1-score": 0.6411483253588516,
+        "support": 130
+      },
+      "healthy": {
+        "precision": 0.5975609756097561,
+        "recall": 0.98,
+        "f1-score": 0.7424242424242423,
+        "support": 100
+      },
+      "spider_mite": {
+        "precision": 0.7450980392156863,
+        "recall": 0.926829268292683,
+        "f1-score": 0.8260869565217392,
+        "support": 41
+      },
+      "accuracy": 0.741635687732342,
+      "macro avg": {
+        "precision": 0.7655366095034412,
+        "recall": 0.7587603436358249,
+        "f1-score": 0.7440517250254023,
+        "support": 538
+      },
+      "weighted avg": {
+        "precision": 0.7716440365262475,
+        "recall": 0.741635687732342,
+        "f1-score": 0.7363507850380985,
+        "support": 538
+      }
+    },
+    "confusion_matrix": [
+      [
+        96,
+        7,
+        4,
+        4,
+        8,
+        6
+      ],
+      [
+        1,
+        76,
+        1,
+        8,
+        17,
+        1
+      ],
+      [
+        2,
+        1,
+        24,
+        0,
+        10,
+        1
+      ],
+      [
+        16,
+        15,
+        1,
+        67,
+        28,
+        3
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        98,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        3,
+        38
+      ]
+    ],
+    "acquisition_condition_reports": {
+      "controlled_environment": {
+        "sample_count": 197,
+        "accuracy": 0.6903553299492385,
+        "report": {
+          "algal_leaf_spot": {
+            "precision": 0.5384615384615384,
+            "recall": 0.4827586206896552,
+            "f1-score": 0.509090909090909,
+            "support": 29
+          },
+          "black_blight": {
+            "precision": 0.65625,
+            "recall": 0.7,
+            "f1-score": 0.6774193548387096,
+            "support": 30
+          },
+          "blister_blight": {
+            "precision": 0.9523809523809523,
+            "recall": 0.7407407407407407,
+            "f1-score": 0.8333333333333334,
+            "support": 27
+          },
+          "gray_blight": {
+            "precision": 0.9117647058823529,
+            "recall": 0.5344827586206896,
+            "f1-score": 0.6739130434782609,
+            "support": 58
+          },
+          "healthy": {
+            "precision": 0.5737704918032787,
+            "recall": 0.9722222222222222,
+            "f1-score": 0.7216494845360824,
+            "support": 36
+          },
+          "spider_mite": {
+            "precision": 0.6521739130434783,
+            "recall": 0.8823529411764706,
+            "f1-score": 0.75,
+            "support": 17
+          },
+          "accuracy": 0.6903553299492385,
+          "macro avg": {
+            "precision": 0.7141336002619334,
+            "recall": 0.7187595472416297,
+            "f1-score": 0.6942343542128825,
+            "support": 197
+          },
+          "weighted avg": {
+            "precision": 0.7393005964340302,
+            "recall": 0.6903553299492385,
+            "f1-score": 0.6873226140803845,
+            "support": 197
+          }
+        }
+      },
+      "field": {
+        "sample_count": 341,
+        "accuracy": 0.7712609970674487,
+        "report": {
+          "algal_leaf_spot": {
+            "precision": 0.9213483146067416,
+            "recall": 0.8541666666666666,
+            "f1-score": 0.8864864864864865,
+            "support": 96
+          },
+          "black_blight": {
+            "precision": 0.8208955223880597,
+            "recall": 0.7432432432432432,
+            "f1-score": 0.7801418439716312,
+            "support": 74
+          },
+          "blister_blight": {
+            "precision": 0.4444444444444444,
+            "recall": 0.36363636363636365,
+            "f1-score": 0.39999999999999997,
+            "support": 11
+          },
+          "gray_blight": {
+            "precision": 0.8,
+            "recall": 0.5,
+            "f1-score": 0.6153846153846154,
+            "support": 72
+          },
+          "healthy": {
+            "precision": 0.6116504854368932,
+            "recall": 0.984375,
+            "f1-score": 0.7544910179640719,
+            "support": 64
+          },
+          "spider_mite": {
+            "precision": 0.8214285714285714,
+            "recall": 0.9583333333333334,
+            "f1-score": 0.8846153846153847,
+            "support": 24
+          },
+          "accuracy": 0.7712609970674487,
+          "macro avg": {
+            "precision": 0.7366278897174517,
+            "recall": 0.7339591011466012,
+            "f1-score": 0.720186558070365,
+            "support": 341
+          },
+          "weighted avg": {
+            "precision": 0.7933856672436932,
+            "recall": 0.7712609970674487,
+            "f1-score": 0.7655691667001923,
+            "support": 341
+          }
+        }
+      }
+    }
+  }
+}

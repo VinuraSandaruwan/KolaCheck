@@ -1,3 +1,5 @@
-tensorflow>=2.16
-scikit-learn
-numpy
+# Python 3.12; TensorFlow is used for training/export, LiteRT for deployed-model evaluation.
+tensorflow==2.21.0
+numpy==2.5.3
+ai-edge-litert==2.2.0
+Pillow==12.3.0

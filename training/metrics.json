@@ -1,0 +1,390 @@
+{
+  "evaluation_split": "test_original_only_baseid_split",
+  "split_method": "provided base_image_id grouped split",
+  "model_architecture": "MobileNetV2 ImageNet weights, 224x224, fine-tuned final 30 layers",
+  "training_seed": 42,
+  "tensorflow_version": "2.21.0",
+  "dataset_image_counts": {
+    "algal_leaf_spot": 417,
+    "black_blight": 345,
+    "blister_blight": 126,
+    "gray_blight": 431,
+    "healthy": 334,
+    "spider_mite": 138
+  },
+  "sample_counts": {
+    "train": 1065,
+    "validation": 188,
+    "test": 538
+  },
+  "classes": [
+    "algal_leaf_spot",
+    "black_blight",
+    "blister_blight",
+    "gray_blight",
+    "healthy",
+    "spider_mite"
+  ],
+  "model_artifact": {
+    "file": "app/assets/model.tflite",
+    "sha256": "4fbd956c3cbf44828965ba1dfa1fc4bb9cc4ab7617e38496cc6eab75fa2ad6a2",
+    "size_bytes": 8916652,
+    "export": "float weights; no post-training weight quantization"
+  },
+  "tflite_evaluation": {
+    "evaluation_split": "test_original_only_baseid_split",
+    "sample_count": 538,
+    "model_version": "4fbd956c3cbf4482",
+    "labels_match_app": true,
+    "input_shape": [
+      1,
+      224,
+      224,
+      3
+    ],
+    "output_shape": [
+      1,
+      6
+    ],
+    "preprocessing": "EXIF transpose, RGB, 224x224 bilinear resize; same code as backend inference",
+    "report": {
+      "algal_leaf_spot": {
+        "precision": 0.8717948717948718,
+        "recall": 0.816,
+        "f1-score": 0.8429752066115703,
+        "support": 125
+      },
+      "black_blight": {
+        "precision": 0.8311688311688312,
+        "recall": 0.6153846153846154,
+        "f1-score": 0.707182320441989,
+        "support": 104
+      },
+      "blister_blight": {
+        "precision": 0.9333333333333333,
+        "recall": 0.7368421052631579,
+        "f1-score": 0.8235294117647058,
+        "support": 38
+      },
+      "gray_blight": {
+        "precision": 0.7698412698412699,
+        "recall": 0.7461538461538462,
+        "f1-score": 0.7578125000000001,
+        "support": 130
+      },
+      "healthy": {
+        "precision": 0.7461538461538462,
+        "recall": 0.97,
+        "f1-score": 0.8434782608695651,
+        "support": 100
+      },
+      "spider_mite": {
+        "precision": 0.6724137931034483,
+        "recall": 0.9512195121951219,
+        "f1-score": 0.7878787878787878,
+        "support": 41
+      },
+      "accuracy": 0.7936802973977695,
+      "macro avg": {
+        "precision": 0.8041176575659335,
+        "recall": 0.8059333464994568,
+        "f1-score": 0.7938094145944364,
+        "support": 538
+      },
+      "weighted avg": {
+        "precision": 0.8051046455289501,
+        "recall": 0.7936802973977695,
+        "f1-score": 0.7906681434748305,
+        "support": 538
+      }
+    },
+    "confusion_matrix": [
+      [
+        102,
+        2,
+        1,
+        8,
+        3,
+        9
+      ],
+      [
+        4,
+        64,
+        1,
+        21,
+        11,
+        3
+      ],
+      [
+        2,
+        1,
+        28,
+        0,
+        6,
+        1
+      ],
+      [
+        8,
+        10,
+        0,
+        97,
+        11,
+        4
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        97,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        2,
+        39
+      ]
+    ],
+    "acquisition_condition_reports": {
+      "controlled_environment": {
+        "sample_count": 197,
+        "accuracy": 0.7766497461928934,
+        "report": {
+          "algal_leaf_spot": {
+            "precision": 0.6842105263157895,
+            "recall": 0.4482758620689655,
+            "f1-score": 0.5416666666666666,
+            "support": 29
+          },
+          "black_blight": {
+            "precision": 0.7391304347826086,
+            "recall": 0.5666666666666667,
+            "f1-score": 0.6415094339622641,
+            "support": 30
+          },
+          "blister_blight": {
+            "precision": 0.96,
+            "recall": 0.8888888888888888,
+            "f1-score": 0.923076923076923,
+            "support": 27
+          },
+          "gray_blight": {
+            "precision": 0.8275862068965517,
+            "recall": 0.8275862068965517,
+            "f1-score": 0.8275862068965517,
+            "support": 58
+          },
+          "healthy": {
+            "precision": 0.7954545454545454,
+            "recall": 0.9722222222222222,
+            "f1-score": 0.875,
+            "support": 36
+          },
+          "spider_mite": {
+            "precision": 0.5714285714285714,
+            "recall": 0.9411764705882353,
+            "f1-score": 0.7111111111111111,
+            "support": 17
+          },
+          "accuracy": 0.7766497461928934,
+          "macro avg": {
+            "precision": 0.7629683808130111,
+            "recall": 0.7741360528885884,
+            "f1-score": 0.7533250569522528,
+            "support": 197
+          },
+          "weighted avg": {
+            "precision": 0.783181054097896,
+            "recall": 0.7766497461928934,
+            "f1-score": 0.7688608231683608,
+            "support": 197
+          }
+        }
+      },
+      "field": {
+        "sample_count": 341,
+        "accuracy": 0.8035190615835777,
+        "report": {
+          "algal_leaf_spot": {
+            "precision": 0.9081632653061225,
+            "recall": 0.9270833333333334,
+            "f1-score": 0.9175257731958762,
+            "support": 96
+          },
+          "black_blight": {
+            "precision": 0.8703703703703703,
+            "recall": 0.6351351351351351,
+            "f1-score": 0.734375,
+            "support": 74
+          },
+          "blister_blight": {
+            "precision": 0.8,
+            "recall": 0.36363636363636365,
+            "f1-score": 0.5000000000000001,
+            "support": 11
+          },
+          "gray_blight": {
+            "precision": 0.7205882352941176,
+            "recall": 0.6805555555555556,
+            "f1-score": 0.7000000000000001,
+            "support": 72
+          },
+          "healthy": {
+            "precision": 0.7209302325581395,
+            "recall": 0.96875,
+            "f1-score": 0.8266666666666667,
+            "support": 64
+          },
+          "spider_mite": {
+            "precision": 0.7666666666666667,
+            "recall": 0.9583333333333334,
+            "f1-score": 0.8518518518518519,
+            "support": 24
+          },
+          "accuracy": 0.8035190615835777,
+          "macro avg": {
+            "precision": 0.7977864616992361,
+            "recall": 0.7555822868322868,
+            "f1-score": 0.7550698819523992,
+            "support": 341
+          },
+          "weighted avg": {
+            "precision": 0.811768236661855,
+            "recall": 0.8035190615835777,
+            "f1-score": 0.796707728263681,
+            "support": 341
+          }
+        }
+      }
+    },
+    "test_set_usage_note": "This supplied test split has been used to compare model artifacts; use a new independent field-photo set for future final claims."
+  },
+  "dataset": "SLTeaLeaf standardized originals",
+  "training_config": {
+    "input_size": 224,
+    "batch_size": 32,
+    "head_epochs_max": 10,
+    "fine_tune_epochs_max": 10,
+    "fine_tune_unfrozen_layers": 30,
+    "head_learning_rate": 0.001,
+    "fine_tune_learning_rate": 1e-05,
+    "early_stopping": {
+      "monitor": "val_loss",
+      "patience": 3,
+      "restore_best_weights": true
+    },
+    "online_augmentation": [
+      "horizontal_flip",
+      "vertical_flip",
+      "rotation",
+      "zoom",
+      "contrast",
+      "brightness"
+    ]
+  },
+  "prior_keras_test_report": {
+    "algal_leaf_spot": {
+      "precision": 0.864406779661017,
+      "recall": 0.816,
+      "f1-score": 0.8395061728395061,
+      "support": 125
+    },
+    "black_blight": {
+      "precision": 0.8533333333333334,
+      "recall": 0.6153846153846154,
+      "f1-score": 0.7150837988826816,
+      "support": 104
+    },
+    "blister_blight": {
+      "precision": 0.9032258064516129,
+      "recall": 0.7368421052631579,
+      "f1-score": 0.8115942028985507,
+      "support": 38
+    },
+    "gray_blight": {
+      "precision": 0.7637795275590551,
+      "recall": 0.7461538461538462,
+      "f1-score": 0.754863813229572,
+      "support": 130
+    },
+    "healthy": {
+      "precision": 0.7441860465116279,
+      "recall": 0.96,
+      "f1-score": 0.8384279475982533,
+      "support": 100
+    },
+    "spider_mite": {
+      "precision": 0.6724137931034483,
+      "recall": 0.9512195121951219,
+      "f1-score": 0.7878787878787878,
+      "support": 41
+    },
+    "accuracy": 0.79182156133829,
+    "macro avg": {
+      "precision": 0.8002242144366823,
+      "recall": 0.8042666798327902,
+      "f1-score": 0.7912257872212253,
+      "support": 538
+    },
+    "weighted avg": {
+      "precision": 0.8037156199266476,
+      "recall": 0.79182156133829,
+      "f1-score": 0.7888953293337957,
+      "support": 538
+    }
+  },
+  "prior_keras_test_confusion_matrix": [
+    [
+      102,
+      2,
+      1,
+      8,
+      3,
+      9
+    ],
+    [
+      4,
+      64,
+      1,
+      21,
+      11,
+      3
+    ],
+    [
+      2,
+      1,
+      28,
+      0,
+      6,
+      1
+    ],
+    [
+      9,
+      8,
+      1,
+      97,
+      11,
+      4
+    ],
+    [
+      1,
+      0,
+      0,
+      1,
+      96,
+      2
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      2,
+      39
+    ]
+  ],
+  "test_set_usage_note": "This supplied test split has been used to compare model artifacts; use a new independent field-photo set for future final claims."
+}

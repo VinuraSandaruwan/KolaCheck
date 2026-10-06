@@ -9,8 +9,9 @@ You have Route B (desk research only). Judges can see that. The cheapest way to 
 ## Step 1. Set up tools (Both, 1-2 hours)
 - Install Flutter (flutter.dev/install), Android Studio (for SDK), run `flutter doctor` until Android toolchain is green.
 - Python 3.10-3.12 + `python -m venv venv`.
-- Create a **public GitHub repo** `kolacheck`; add this project; commit early, commit often (judges look at commit history from both of you).
 - Phone: enable Developer Options + USB debugging.
+
+Git hosting is not required for local model/backend testing.
 
 ## Step 2. Get the dataset (Person A, 1 hour)
 1. Open data.mendeley.com/datasets/sjmy6k24d6/3, download, unzip.
@@ -28,6 +29,7 @@ python train.py ../data
 (Free GPU: upload `train.py` and data to Google Colab, then download `model.tflite`, `labels.txt`, `metrics.json`.)
 - Output: `app/assets/model.tflite`, `labels.txt`, `metrics.json`.
 - Read the per-class precision/recall and confusion matrix. Write down which classes get confused (likely blister vs black vs gray blight).
+- Run `python evaluate_tflite.py ../data` to evaluate the exported model that the backend actually serves; review the field/controlled condition breakdown in `metrics.json`.
 - If accuracy is below ~80%: more epochs, check for mislabelled images, merge impossible-to-separate classes. **Report the real number even if modest.** Never quote a number you did not measure.
 - Check `labels.txt` order matches what the app shows (it is loaded from the file, so it always does).
 
@@ -43,9 +45,9 @@ If you cannot reach tea plants, test with printed or on-screen leaf images from 
    export SUPABASE_URL=... SUPABASE_KEY=...
    uvicorn main:app --host 0.0.0.0 --port 8000
    ```
-   Skip the env vars to run in-memory for a quick test.
-4. Open `http://localhost:8000/dashboard` and `/docs` to test. For a demo screen, POST `/api/demo-seed` once (fake data, the dashboard labels it; say so in your pitch).
-5. Deploy for free if time allows (Render/Railway). Otherwise demo on your laptop via the same Wi-Fi.
+   Skip the env vars to run in-memory for a quick local test. Run `uvicorn main:app --host 127.0.0.1 --port 8000` from `backend`.
+4. Open `http://localhost:8000/docs`. Use `POST /api/v1/predictions` to upload an image and test inference. Use `POST /api/v1/scans` to save a result and `GET /api/v1/societies/demo/scan-summary` to inspect the summary. `/api/v1/demo/seed` creates fake in-memory rows for a demo only.
+5. The backend has no sign-in or society authorization yet; keep it on localhost and do not expose it publicly.
 
 ## Step 6. Build the app (Person B, 2-3 hours)
 ```
